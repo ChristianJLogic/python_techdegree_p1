@@ -9,7 +9,7 @@ NOTE: If you strongly prefer to work locally on your own computer, you can total
 
 """
 
-import random
+from random import randint
 
 
 def welcome():
@@ -23,16 +23,31 @@ def welcome():
     """)
 
 
-def start_game():
 
+
+
+
+def start_game():
     welcome()
+    diff_setting = input("Choose a difficultly setting\n[E]asy, [M]edium, [H]ard, [C]razy:> ").Upper()
+    if diff_setting == 'E':
+        difficultly = 10
+    elif diff_setting == 'M':
+        difficultly = 50
+    elif diff_setting == 'H':
+        difficultly = 100
+    elif diff_setting == 'C':
+        difficultly = 1000
+    else:
+        difficultly = 50
+
+    answer = randint(0, difficultly)
 
 
     '''Psuedo-code Hints
 
     When the program starts, we want to:
     ------------------------------------
-    1. Display an intro/welcome message to the player.
     2. Store a random number as the answer/solution.
     3. Continuously prompt the player for a guess.
       a. If the guess greater than the solution, display to the player "It's lower".
