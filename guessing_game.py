@@ -12,8 +12,23 @@ NOTE: If you strongly prefer to work locally on your own computer, you can total
 import random
 
 
+def welcome():
+    print("""
+
+    -------> Welcome to the Number Guessing Game <-------
+    In this fun console game you the player will be tasked with
+    guessing what number I am thinking.
+
+    Try to guess in as little trys as possible and win a prize!
+    """)
+
+
 def start_game():
-    """Psuedo-code Hints
+
+    welcome()
+
+
+    '''Psuedo-code Hints
 
     When the program starts, we want to:
     ------------------------------------
@@ -28,7 +43,7 @@ def start_game():
     5. Let the player know the game is ending, or something that indicates the game is over.
 
     ( You can add more features/enhancements if you'd like to. )
-    """
+    '''
     # write your code inside this function.
 
 
