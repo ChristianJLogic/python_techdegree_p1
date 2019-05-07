@@ -70,9 +70,9 @@ def start_game():
                 else:
                     print("Invalid choice: Try again")
                     continue
-except ValueError:
-    print("INVALID: Guess must be a number try again.")
-    continue
+        except ValueError:
+            print("INVALID: Guess must be a number try again.")
+            continue
 
 
 if __name__ == '__main__':
