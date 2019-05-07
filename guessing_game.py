@@ -2,11 +2,6 @@
 Python Web Development Techdegree
 Project 1 - Number Guessing Game
 --------------------------------
-
-For this first project we will be using Workspaces.
-
-NOTE: If you strongly prefer to work locally on your own computer, you can totally do that by clicking: File -> Download Workspace in the file menu after you fork the snapshot of this workspace.
-
 """
 
 from random import randint
@@ -47,10 +42,10 @@ def start_game():
     # Game Mechanic
     while True:
         try:
-            player_guess = int(input("Give it a shot: What number am I thinking of?\n> "))
+            player_guess = int(input("What number am I thinking of?\n> "))
 
             if player_guess > difficultly or player_guess < 0:
-                print(f"Your guess is not within the range your guess should be between 0 and {difficultly}. Try again.")
+                print(f"Out of Range: Guess should be between 0 and {difficultly}. Try again.\n")
                 continue
             elif answer < player_guess:
                 print("Guess it too high!")
@@ -59,7 +54,7 @@ def start_game():
                 print("Guess is too low!")
                 continue
             elif answer == player_guess:
-                print("Wow you've guessed right! Good Job!")
+                print("Wow you've guessed right! Good Job!\n")
                 play_again = input("\nWould you like to play again? [Y]es/[N]o\n> ").upper()
 
                 if play_again == 'Y':
@@ -68,10 +63,10 @@ def start_game():
                     print("Thank you for playing the Guessing Game! Good-Bye.")
                     break
                 else:
-                    print("Invalid choice: Try again")
+                    print("Invalid choice: Try again\n")
                     continue
         except ValueError:
-            print("INVALID: Guess must be a number try again.")
+            print("INVALID: Guess must be a number try again.\n")
             continue
 
 
