@@ -19,17 +19,17 @@ def welcome():
     In this fun console game you the player will be tasked with
     guessing what number I am thinking.
 
-    Try to guess in as little trys as possible and win a prize!
+    Try to guess in as little trys as possible and beat the high score!
     """)
 
 
-
-
+welcome()
 
 
 def start_game():
-    welcome()
-    diff_setting = input("Choose a difficultly setting\n[E]asy, [M]edium, [H]ard, [C]razy:> ").Upper()
+
+    # Difficultly setting
+    diff_setting = input("Choose a difficultly setting: [E]asy, [M]edium, [H]ard, [C]razy\n> ").upper()
     if diff_setting == 'E':
         difficultly = 10
     elif diff_setting == 'M':
@@ -41,25 +41,38 @@ def start_game():
     else:
         difficultly = 50
 
+    # Stored correct answer
     answer = randint(0, difficultly)
 
+    # Game Mechanic
+    while True:
+        try:
+            player_guess = int(input("Give it a shot: What number am I thinking of?\n> "))
 
-    '''Psuedo-code Hints
+            if player_guess > difficultly or player_guess < 0:
+                print(f"Your guess is not within the range your guess should be between 0 and {difficultly}. Try again.")
+                continue
+            elif answer < player_guess:
+                print("Guess it too high!")
+                continue
+            elif answer > player_guess:
+                print("Guess is too low!")
+                continue
+            elif answer == player_guess:
+                print("Wow you've guessed right! Good Job!")
+                play_again = input("\nWould you like to play again? [Y]es/[N]o\n> ").upper()
 
-    When the program starts, we want to:
-    ------------------------------------
-    2. Store a random number as the answer/solution.
-    3. Continuously prompt the player for a guess.
-      a. If the guess greater than the solution, display to the player "It's lower".
-      b. If the guess is less than the solution, display to the player "It's higher".
-
-    4. Once the guess is correct, stop looping, inform the user they "Got it"
-         and show how many attempts it took them to get the correct number.
-    5. Let the player know the game is ending, or something that indicates the game is over.
-
-    ( You can add more features/enhancements if you'd like to. )
-    '''
-    # write your code inside this function.
+                if play_again == 'Y':
+                    start_game()
+                elif play_again == 'N':
+                    print("Thank you for playing the Guessing Game! Good-Bye.")
+                    break
+                else:
+                    print("Invalid choice: Try again")
+                    continue
+except ValueError:
+    print("INVALID: Guess must be a number try again.")
+    continue
 
 
 if __name__ == '__main__':
