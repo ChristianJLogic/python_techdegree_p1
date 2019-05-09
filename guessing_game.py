@@ -5,6 +5,7 @@ Project 1 - Number Guessing Game
 """
 
 from random import randint
+from sys import exit
 
 
 def welcome():
@@ -43,10 +44,10 @@ def start_game(high_score, high_score_user):
     elif diff_setting == 'C':
         difficultly = 1000
     else:
-        difficultly = 50
+        difficultly = 10
 
     # Stored correct answer
-    answer = randint(0, difficultly)
+    answer = randint(1, difficultly)
 
     # Game Mechanic
     while True:
@@ -89,11 +90,9 @@ def start_game(high_score, high_score_user):
                 if play_again == 'Y':
                     start_game(high_score_container, high_score_user_container)
                 elif play_again == 'N':
-                    print("Thank you for playing the Guessing Game! Good-Bye.")
-                    break
+                    exit("Thank you for playing the Guessing Game! Good-Bye.")
                 else:
-                    print("Invalid choice: Closing game thanks for player. Good-Bye.")
-                    break
+                    exit("Invalid choice: Closing game thanks for player. Good-Bye.")
 
         except ValueError:
             print("INVALID: Guess must be a number try again.\n")
