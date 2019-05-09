@@ -59,7 +59,7 @@ def start_game(high_score, high_score_user):
                 print(f"Out of Range: Guess should be between 0 and {difficultly}. Try again.\n")
                 continue
             elif answer < player_guess:
-                print("Guess it too high!")
+                print("Guess is too high!")
                 user_attempts += 1
                 continue
             elif answer > player_guess:

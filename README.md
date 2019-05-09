@@ -9,7 +9,8 @@ Biggest challenge: Finding out how to get high score to work and display correct
 
 How it can be improved: I think once I learn more about dictionaries the high score could be stored in it and given extra functionality
 
-submitted May 7th, 2019
+submitted May 7th, 2019 [Needed Work]
+resubmitted May 8th, 2019 []
 
 
 
